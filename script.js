@@ -26,9 +26,27 @@ const validateRequired = (fields) => {
   });
 };
 
-// Check input length
-const validateLength = (input, min, max) => {
+// Separate length validation for username
+const validateUsernameLength = (input) => {
+  const min = 3;
+  const max = 13;
   const length = input.value.trim().length;
+
+  if (length < min) {
+    showMessage(input, `Username must be at least ${min} characters`, "error");
+  } else if (length > max) {
+    showMessage(input, `Username must be less than ${max} characters`, "error");
+  } else {
+    showMessage(input, "", "success");
+  }
+};
+
+// Separate length validation for password
+const validatePasswordLength = (input) => {
+  const min = 3;
+  const max = 20;
+  const length = input.value.trim().length;
+
   if (length < min) {
     showMessage(
       input,
@@ -64,8 +82,8 @@ form.addEventListener("submit", (e) => {
   const { username, email, password, password2 } = inputs;
 
   validateRequired([username, email, password, password2]);
-  validateLength(username, 3, 13);
-  validateLength(password, 3, 20);
+  validateUsernameLength(username);
+  validatePasswordLength(password);
+  validatePasswordLength(password2);
   validatePasswordMatch(password, password2);
 });
-//testing the new Breanch
