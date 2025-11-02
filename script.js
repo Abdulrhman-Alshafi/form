@@ -24,7 +24,7 @@ async function loadForm() {
       )
       .join("");
 
-    // ✅ Insert the fields between the <h2> and <button>
+    //Insert the fields between the <h2> and <button>
     const submitBtn = form.querySelector("button");
     submitBtn.insertAdjacentHTML("beforebegin", formHTML);
 
@@ -67,11 +67,15 @@ const validateUsernameLength = (input) => {
   const min = 3,
     max = 13;
   const len = input.value.trim().length;
-  if (len < min)
+  if (len < min) {
     showMessage(input, `Username must be at least ${min} characters`, "error");
-  else if (len > max)
+    return;
+  }
+  if (len > max) {
     showMessage(input, `Username must be less than ${max} characters`, "error");
-  else showMessage(input, "", "success");
+    return;
+  }
+  showMessage(input, "", "success");
 };
 
 // Check Password length
@@ -79,19 +83,23 @@ const validatePasswordLength = (input) => {
   const min = 3,
     max = 20;
   const len = input.value.trim().length;
-  if (len < min)
+  if (len < min) {
     showMessage(
       input,
       `${formatName(input.id)} must be at least ${min} characters`,
       "error"
     );
-  else if (len > max)
+    return;
+  }
+  if (len > max) {
     showMessage(
       input,
       `${formatName(input.id)} must be less than ${max} characters`,
       "error"
     );
-  else showMessage(input, "", "success");
+    return;
+  }
+  showMessage(input, "", "success");
 };
 
 // Check if passwords match
