@@ -68,3 +68,4 @@ form.addEventListener("submit", (e) => {
   validateLength(password, 3, 20);
   validatePasswordMatch(password, password2);
 });
+//testing the new Breanch
