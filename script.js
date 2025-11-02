@@ -53,7 +53,7 @@ const validatePasswordMatch = (pass1, pass2) => {
   }
 };
 
-// Capitalize first letter of field name ( ma fe da3e for this "for fun ;)" )
+// Capitalize first letter of field name
 const formatName = (name) =>
   name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
