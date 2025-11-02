@@ -1,0 +1,36 @@
+{
+  "formControls": [
+    {
+      "label": "Username",
+      "for": "username",
+      "type": "text",
+      "id": "username",
+      "placeholder": "Enter Username",
+      "errorMessage": "Error message"
+    },
+    {
+      "label": "Email",
+      "for": "email",
+      "type": "email",
+      "id": "email",
+      "placeholder": "Enter Email",
+      "errorMessage": "Error message"
+    },
+    {
+      "label": "Password",
+      "for": "password",
+      "type": "password",
+      "id": "password",
+      "placeholder": "Enter Password",
+      "errorMessage": "Error message"
+    },
+    {
+      "label": "Confirm Password",
+      "for": "password2",
+      "type": "password",
+      "id": "password2",
+      "placeholder": "Enter password again",
+      "errorMessage": "Error message"
+    }
+  ]
+}
